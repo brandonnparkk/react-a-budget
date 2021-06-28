@@ -1,24 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { FC } from 'react';
+import ExpenseItem from 'components/ExpenseItem/index';
 
-function App() {
+const App: FC = () => {
+
+  const expenses = [
+    { id: 1, title: 'Car Insurance', amount: 260.56, date: new Date("2021-06-16") },
+    { id: 2, title: 'McDonalds', amount: 2.97, date: new Date("2021-06-18") },
+    { id: 3, title: 'Tennis Racquet', amount: 199.99, date: new Date("2021-06-26") },
+    { id: 4, title: 'Dinner for Two', amount: 25.36, date: new Date("2021-06-28") },
+    { id: 5, title: 'Loan Payment', amount: 237.12, date: new Date("2021-06-30") },
+  ];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ExpenseItem data={expenses}/>
     </div>
   );
 }
